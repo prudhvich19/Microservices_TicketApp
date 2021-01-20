@@ -10,9 +10,9 @@ const start = async () => {
   // if(!process.env.JWT_KEY){
   //   throw new Error('JWT_KEY must be defined')
   // }
-  // if(!process.env.MONGO_URI){
-  //   throw new Error('MONGO_URI must be defined')
-  // }
+  if(!process.env.MONGO_URI){
+    throw new Error('MONGO_URI must be defined')
+  }
   // if(!process.env.NATS_CLIENT_ID){
   //   throw new Error('NATS_CLIENT_ID must be defined')
   // }
@@ -41,7 +41,7 @@ const start = async () => {
     new OrderCreatedListener(natsWrapper.client).listen();
     new OrderCancelledListener(natsWrapper.client).listen();
       
-    await mongoose.connect('mongodb+srv://micro:YUDATxEwdk2NfT4X@cluster0.yq7ya.mongodb.net/payments?retryWrites=true&w=majority',{
+    await mongoose.connect(process.env.MONGO_URI,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
