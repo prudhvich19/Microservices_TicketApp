@@ -6,8 +6,10 @@ This project can handle concurrency issues as it implements the optmistic concur
 
 All the services are made up of Express and communicate asynchronously by emitting events to the NATS streaming server Event-Bus in order to exchange data 
 amongst themselves. The expriration service uses Redis and BullJs to keep of track of the time limit for each of the orders (no endpoints present), whereas all
-the others use MongoDb (and do have endpoints). The payments service can handle payments using a token and a charge in real time in StripeJS.
+the others use standalone MongoDb services (and do have endpoints). The payments service can handle payments using a token and a charge in real time in StripeJS.
 All the service share all common functionality such as event publishers and listeners, error-handling, authentication middleware using a custom-made npm library.
+
+This also has been abled with full-fledged automated testing suites using Jest for all endpoints in every service.
 
 I also made use of minikube and skaffold while developing it locally.
 
