@@ -15,7 +15,7 @@ I also made use of minikube and skaffold while developing it locally.
 
 
 
-Having said all the above, this project has only been made to show the best of my skills for my job-seeking purposes and is not allowed to anyone for
+Having said all the above, this project has been made to only show the best of my skills for my job-seeking purposes and is not allowed to anyone for
 any kind of use but only to view. Hence, this hase been written in a particularly suitable manner.
 
 
